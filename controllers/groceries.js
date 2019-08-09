@@ -2,6 +2,11 @@ const Grocery = require("../models/Grocery");
 const Meal = require("../models/Meal");
 
 module.exports = {
+  list: async (req, res) => {
+    //list all groceries
+    const groceries = await Grocery.find();
+    res.status(200).send({ groceries });
+  },
   //Create a new grocery item
   create: async (req, res) => {
     const { mealId } = req.params;

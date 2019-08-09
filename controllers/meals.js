@@ -10,10 +10,11 @@ module.exports = {
   //save meal to db
   create: async (req, res) => {
     const meal = await new Meal(req.body);
-    const result = meal.save();
+    const result =  await meal.save();
     console.log(result);
-    return res.status(200).json({ message: "cool ! saved to the db ." });
+    return res.status(200).send({ result });
   },
+  //should get groceries items of a given meal
   getMealGroceries: async (req, res) => {
     const { mealId } = req.params;
     const meal = await Meal.findById(mealId);
