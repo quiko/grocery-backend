@@ -1,4 +1,4 @@
-# appointmentsBackend
+# GriceiesBackend
 
 express backend for groceries handling app
 
